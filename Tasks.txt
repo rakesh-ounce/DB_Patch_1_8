@@ -1,0 +1,65 @@
+change BOC to varchar2 BOC_CODE and use OBJECT Lookup
+chnage FUND_PROG_CODE to varchar2 program_code  use PROGRAM lookup
+Create data load for OBJECT and PROGRAM and below:
+
+select * from xxaas_boc_category
+
+select * from xxaas_boc_category_details
+
+select * from xxaas_program_category
+
+select * from xxaas_program_category_details
+
+create profile for email details, username, password
+
+
+{
+	username:123,
+	password:123,
+	port:
+	
+	
+	
+}
+
+
+Need to discuss with Atul to create screen for profile values
+
+
+ To change the data types for BOC_CODE and PROGRAM_CODE
+ To update the profile value of SMTP_DETAILS profile to have all the properties in json format
+ To make all methods in controllers unique
+ To insert all methods as API names in "API" table
+ To assign SYSTEM role as ADMIN to each API in API_ROLE_ASSIGNMENTS table
+ Need to write apis for API and API_ROLE_ASSIGNMENTS table
+ Need to fetch SMTP details using profile value api in email service.java file
+ Mani need to provide OBJECT and PROGRAM lookup scripts- Done
+ Need to write isApiAccessible method 
+ Need to call isApiAccessible method  in each method of controller
+ changing requestbdLines columns in views
+
+ Change the name of table xxaas_org_dist_groups to org_distribution_groups
+ Need to create api using DISTRIBUTION_GROUP_V with below filters:
+	1. By Org Id
+        2. By Distribution Group Id & Org Id
+	--Page 1
+	select group_name,description,default_email_address from DISTRIBUTION_GROUP_V where org_id=1780
+
+	--Page 2
+	select user_name,first_name,middle_name,last_name,email,email_flag from DISTRIBUTION_GROUP_V where org_id=1780 and dist_group_id=54
+
+
+
+
+
+Mani Need to create lookup for "PROFILE_LEVELS" with description= "Lookup for Profile Level Types" following values
+1. PRODUCT      	Product  
+2. APPLICATION  	Application
+3. PROGRAM_OFFICE 	Program Office
+4. SUB_OFFICE 		Sub Office
+5. USER 		User
+
+
+
+
+
